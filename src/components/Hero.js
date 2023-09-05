@@ -2,7 +2,6 @@
 import Image from "next/image";
 import React from "react";
 import avatar from "../assets/avatar.jpg";
-import Link from "next/link";
 
 function scroll(id) {
   const element = document.getElementById(`${id}`);
@@ -38,9 +37,14 @@ export const Hero = () => {
         >
           More about me
         </div>
-        <button className="py-2 px-3 w-[200px] border rounded-lg text-lg bg-[#374151] text-white hover:bg-[#21222c] dark:bg-[#21222c] dark:text-white dark:border-none dark:hover:bg-[#393942] ">
+
+        <a
+          href="/sahilsinhmar.pdf"
+          className="py-2 px-3 w-[200px] border rounded-lg text-lg bg-[#374151] text-white hover:bg-[#21222c] dark:bg-[#21222c] dark:text-white dark:border-none dark:hover:bg-[#393942] text-center "
+          download="sahilsinhmar.pdf"
+        >
           Resume
-        </button>
+        </a>
       </div>
     </div>
   );

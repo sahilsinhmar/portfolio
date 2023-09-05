@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import Link from "next/link";
 import { motion } from "framer-motion";
 
 import { LuAlignJustify } from "react-icons/lu";
