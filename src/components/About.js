@@ -12,7 +12,7 @@ export const About = () => {
       <div className="flex flex-col items-center px-4 gap-6 font-Poppins font-semibold sm:text-xl text-[#3a4151] dark:text-white">
         <p className="text-3xl">About Me</p>
         <p>
-          {` Hi, I'm Sahil Sinhmar. I'm a Full-Stack web developer from India. I
+          {` Hi, I'm Sahil Sinhmar. I'm a Frontend web developer from India. I
           enjoy seeking out creative solutions to complex problems. It was back
           in late 2021 when I got interested in Web Development and decided to
           learn HTML & CSS. Fast forward to today, I learned various web

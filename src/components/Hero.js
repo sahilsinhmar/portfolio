@@ -26,8 +26,8 @@ export const Hero = () => {
         Sahil Sinhmar
       </p>
       <p className="text-center text-[#3a4151] dark:text-white px-1 lg:text-2xl lg:w-[1000px] ">
-        {` Deeply invested in the life-long learning mentality, I'm a full-stack
-        developer from India who carries a keen eye for design in an user-first
+        {` Deeply invested in the life-long learning mentality, I'm a Frontend
+        Developer from India who carries a keen eye for design in an user-first
         approach.`}
       </p>
       <div className="sm:flex-row flex flex-col gap-2 sm:gap-4">
