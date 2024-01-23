@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { LuAlignJustify } from "react-icons/lu";
 import { RiCloseLine } from "react-icons/ri";
 import DarkMode from "./DarkMode";
+import Link from "next/link";
 
 const variants = {
   open: {
@@ -27,6 +28,25 @@ const variants = {
   },
 };
 
+const Links = [
+  {
+    name: "Home",
+    link: "home",
+  },
+  {
+    name: "About",
+    link: "about",
+  },
+  {
+    name: "Skills",
+    link: "skill",
+  },
+  {
+    name: "Projects",
+    link: "projects",
+  },
+];
+
 export const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -38,106 +58,46 @@ export const Nav = () => {
   }
 
   return (
-    <>
-      <nav className=" fixed flex items-center justify-between border sm:justify-around sm:h-14 font-semibold text-lg h-12 px-2 text-[#3a4151]  dark:bg-[#21222c] bg-[#ffffff] dark:border-none dark:text-[#ffffff] font-Poppins shadow-sm w-[100vw] top-0 ">
-        <div
-          className="dark:text-[#ffb703] text-[#3F72AF] font-Poppins text-2xl font-extrabold cursor-pointer"
-          onClick={() => scroll("home")}
-        >
-          SAHIL
-        </div>
-
-        <section className=" gap-4 hidden sm:flex">
+    <nav className="max-w-screen md-w-full top-0 left-0 sticky ">
+      <div
+        className={`md:flex items-center justify-between  py-2   md:px-60 px-7 z-20 bg-white text-[#3a4151]  dark:bg-[#21222c] dark:border-none dark:text-[#ffffff] font-Poppins shadow-sm transition-all duration-500 ease-in`}
+      >
+        <div className="flex items-center justify-between ">
           <div
-            className="dark:hover:bg-[#393942] p-1 rounded-lg  hover:underline hover:bg-zinc-100 cursor-pointer"
+            className="dark:text-[#ffb703] text-[#3F72AF] font-Poppins text-2xl font-extrabold cursor-pointer"
             onClick={() => scroll("home")}
           >
-            Home
+            SAHIL
           </div>
           <div
-            className="dark:hover:bg-[#393942] p-1 rounded-lg  hover:underline hover:bg-zinc-100 cursor-pointer"
-            onClick={() => scroll("about")}
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-3xl   cursor-pointer  md:hidden"
           >
-            About
+            {isOpen ? <RiCloseLine size={30} /> : <LuAlignJustify />}
           </div>
-          <div
-            className="dark:hover:bg-[#393942] p-1 rounded-lg  hover:underline hover:bg-zinc-100 cursor-pointer"
-            onClick={() => scroll("skill")}
-          >
-            Skills
-          </div>
-          <div
-            className="dark:hover:bg-[#393942] p-1 rounded-lg hover:underline hover:bg-zinc-100 cursor-pointer"
-            onClick={() => scroll("projects")}
-          >
-            Projects
-          </div>
-          <DarkMode />
-        </section>
-
-        <section className="sm:hidden flex relative justify-end  ">
-          <LuAlignJustify
-            className="h-8 w-8  dark:text-white cursor-pointer"
-            onClick={() => setIsOpen((isOpen) => !isOpen)}
-          />
-        </section>
-      </nav>
-      {isOpen && (
-        <motion.div
-          initial="closed"
-          animate={isOpen ? "open" : "closed"}
-          variants={variants}
-          className="fixed right-0 left-0 top-0 my-2 px-4 min-w-[50px] min-h-40 flex-col flex z-30 bg-[#ffffff] gap-2  py-4 justify-center ease-in rounded-lg border mx-2 text-lg shadow-lg dark:bg-[#21222c] dark:text-white dark:border-none font-Poppins"
+        </div>
+        <ul
+          className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static $ md:z-auto -z-10 left-0 w-full md:w-auto md:pl-0 pl-9 bg-white transition-all duration-500 ease-in  ${
+            isOpen ? "top-12 opacity-100" : "top-[-290px]"
+          } md:opacity-100 text-[#3a4151]  dark:bg-[#21222c] bg-[#ffffff]   font-Poppins dark:text-[#ffb703]`}
         >
-          <div className="flex justify-between items-center gap-2">
-            <div
-              className="dark:hover:bg-[#393942] p-1 rounded-lg w-full hover:bg-zinc-100 cursor-pointer"
+          {Links.map((item) => (
+            <li
+              className="md:ml-8 md:my-0 my-7 text-xl cursor-pointer  hover:text-gray-400 duration-500"
               onClick={() => {
+                scroll(`${item.link}`);
                 setIsOpen(false);
-                scroll("home");
               }}
+              key={item.name}
             >
-              Home
-            </div>
-            <RiCloseLine
-              className="h-10 w-10 dark:text-white cursor-pointer  "
-              onClick={() => setIsOpen(false)}
-            />
+              {item.name}
+            </li>
+          ))}
+          <div className="md:pl-8 ">
+            <DarkMode />
           </div>
-
-          <div
-            className="dark:hover:bg-[#393942] p-1 rounded-lg hover:bg-zinc-100 cursor-pointer"
-            onClick={() => {
-              scroll("about");
-              setIsOpen(false);
-            }}
-          >
-            About
-          </div>
-          <div
-            className="dark:hover:bg-[#393942] p-1 rounded-lg hover:bg-zinc-100 cursor-pointer"
-            onClick={() => {
-              setIsOpen(false);
-              scroll("skill");
-            }}
-          >
-            Skills
-          </div>
-          <div
-            className="dark:hover:bg-[#393942] p-1 rounded-lg hover:bg-zinc-100 cursor-pointer"
-            onClick={() => {
-              setIsOpen(false);
-              scroll("projects");
-            }}
-          >
-            Projects
-          </div>
-          <div className="border"></div>
-          <div>
-            <DarkMode onClick={() => setIsDarkMode(() => !DarkMode)} />
-          </div>
-        </motion.div>
-      )}
-    </>
+        </ul>
+      </div>
+    </nav>
   );
 };

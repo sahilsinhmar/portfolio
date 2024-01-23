@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="main">
         <Nav />
-        <main className="mt-12  w-[100vw]  sm:px-16">{children}</main>
+        <main>{children}</main>
         <Footer />
       </body>
     </html>

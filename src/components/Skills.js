@@ -6,10 +6,10 @@ const Skills = () => {
   return (
     <div
       id="skill"
-      className="flex flex-col mt-4 px-2 items-center w-full pt-16 lg:px-64  gap-4 font-Poppins min-h-screen   "
+      className="flex flex-col mt-4 px-2 items-center w-full pt-32 md:pt-16 lg:px-64  gap-4 font-Poppins h-[100svh] "
     >
       <p className="text-2xl font-semibold dark:text-white">Skills</p>
-      <div className="flex flex-wrap items-center justify-between  px-4 lg:px-16 lg:gap-8 gap-5">
+      <div className="flex flex-row flex-wrap gap-4 md:gap-16 mt-4 justify-between px-6 py-2">
         {skillsData.map((skill, index) => (
           <div key={index} className="flex flex-col gap-1 items-center ">
             <Image

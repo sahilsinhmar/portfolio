@@ -11,8 +11,8 @@ function scroll(id) {
 }
 export const Hero = () => {
   return (
-    <div className="flex flex-col items-center pt-[100px] mx-auto w-full gap-5 font-Poppins h-screen px-2 ">
-      <div className="max-w-[180px] max-h-[180px] rounded-full border">
+    <div className="flex flex-col items-center pt-12 md:pt-28 w-full gap-5 font-Poppins h-[100svh] px-2 ">
+      <div className="max-w-[180px] max-h-[180px] rounded-full ">
         <Image
           src={avatar}
           alt="avatar"

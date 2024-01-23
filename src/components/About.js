@@ -7,7 +7,7 @@ export const About = () => {
   return (
     <div
       id="about"
-      className="flex flex-col items-center w-full pt-16 lg:px-32  gap-4 font-Poppins min-h-screen   "
+      className="flex flex-col items-center pt-16 w-full  lg:px-32 font-Poppins h-[100svh]  "
     >
       <div className="flex flex-col items-center px-4 gap-6 font-Poppins font-semibold sm:text-xl text-[#3a4151] dark:text-white">
         <p className="text-3xl">About Me</p>
