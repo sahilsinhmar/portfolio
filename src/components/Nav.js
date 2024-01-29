@@ -60,9 +60,9 @@ export const Nav = () => {
   return (
     <nav className="max-w-screen md-w-full top-0 left-0 sticky ">
       <div
-        className={`md:flex items-center justify-between  py-2   md:px-60 px-7 z-20 bg-white text-[#3a4151]  dark:bg-[#21222c] dark:border-none dark:text-[#ffffff] font-Poppins shadow-sm transition-all duration-500 ease-in`}
+        className={`md:flex items-center justify-between   py-2   md:px-24 px-7 z-20 bg-white text-[#3a4151]  dark:bg-[#21222c] dark:border-none dark:text-[#ffffff] font-Poppins shadow-sm transition-all duration-500 ease-in border-2 `}
       >
-        <div className="flex items-center justify-between ">
+        <div className="flex items-center justify-between  ">
           <div
             className="dark:text-[#ffb703] text-[#3F72AF] font-Poppins text-2xl font-extrabold cursor-pointer"
             onClick={() => scroll("home")}
@@ -77,7 +77,7 @@ export const Nav = () => {
           </div>
         </div>
         <ul
-          className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static $ md:z-auto -z-10 left-0 w-full md:w-auto md:pl-0 pl-9 bg-white transition-all duration-500 ease-in  ${
+          className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static $ md:z-auto -z-10 left-0 w-full md:w-auto md:pl-0   pl-9 bg-white transition-all duration-500 ease-in  ${
             isOpen ? "top-12 opacity-100" : "top-[-290px]"
           } md:opacity-100 text-[#3a4151]  dark:bg-[#21222c] bg-[#ffffff]   font-Poppins dark:text-[#ffb703]`}
         >
@@ -93,7 +93,7 @@ export const Nav = () => {
               {item.name}
             </li>
           ))}
-          <div className="md:pl-8 ">
+          <div className="md:ml-4">
             <DarkMode />
           </div>
         </ul>
